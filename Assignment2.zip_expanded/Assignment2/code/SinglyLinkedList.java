@@ -2,12 +2,12 @@ public class SinglyLinkedList<E>{
 
   private static class Node<E>{
 	  private E emt; 
-	  private Node<E> node;
-	 
+	  private Node<E> node;	 
 	  
     public Node(E e, Node<E> n){
     emt=e;
     node = n;
+    
     }
     
     
@@ -38,21 +38,22 @@ public class SinglyLinkedList<E>{
   }
   
   public E first(){
-	  if (isEmpty()) { 
+	  if (this.size==0) { 
 		  return null;
 	  }
 	    return head.getElement();
   }
   
   public E last(){
-	  if (size==0) {
+	  if (this.size==0) {
 		  return null;
 	  }
 	    return tail.getElement();
   }
   
   public void addFirst(E element){
-	  head = new Node<>(element, head);              
+	  head = new Node<>(element, head);
+	  
 	    if (size == 0) {
 	      tail = head;  
 	    }
@@ -61,7 +62,7 @@ public class SinglyLinkedList<E>{
   
   public void addLast(E element){
 	  Node<E> temp = new Node<>(element, null);   
-	    if (isEmpty()) {
+	    if (this.size ==0) {
 	      head = temp;
 	    }
 	    else {
@@ -72,19 +73,19 @@ public class SinglyLinkedList<E>{
   }
   
   public E removeFirst(){
-	  
+	  if (size == 0) {
+	      tail = null;  
+	    }
 	  if (isEmpty()) {
 		  return null;              
 	  }
 	    E temp = head.getElement();
 	    head = head.getNext();                   
 	    size--;
-	    if (size == 0) {
-	      tail = null;  
-	    }
+	    
 	    return temp;
   }
-  public E removeLast(){
+/*  public E removeLast(){
 	  
 	  if (head == null) 
           return null; 
@@ -104,7 +105,7 @@ public class SinglyLinkedList<E>{
       second.node = null; 
     
       return an;
-  }
+  }*/
 
 
 }
