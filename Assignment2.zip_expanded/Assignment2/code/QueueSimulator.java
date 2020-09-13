@@ -17,6 +17,7 @@ public class QueueSimulator{
     randNUM= Math.random();
     time1= (-1/arrivalRate) * (Math.log(1-randNUM));
     //System.out.println(time1);
+  
     return time1;
   }
   
